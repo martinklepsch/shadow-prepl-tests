@@ -1,0 +1,14 @@
+{:source-paths ["src"]
+ :dependencies [[metosin/sieppari "0.0.0-alpha8"]]
+ :dev-http {8000 "public"}
+ :prepl {:app 12345
+         :script 13333}
+ :socket-repl {:port 9000}
+
+ :builds {:app {:target :browser
+                :modules {:main {:entries [sr.app]}}
+                :output-dir "public/"
+                :asset-path "/"}
+          :script {:target :node-script
+                   :main sr.script/main
+                   :output-to "script-out/script.js"}}}
